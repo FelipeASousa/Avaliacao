@@ -1,5 +1,6 @@
 package com.avaliacao.avaliacao.Entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -19,7 +20,7 @@ public class Compromisso {
     @Column(name = "cpm_nome")
 	private String cpm_nome;
     @Column(name = "cpm_data_hora")
-	private Date cpm_data_hora;
+	private LocalDateTime cpm_data_hora;
     @Column(name = "cpm_duracao_prevista")
 	private Float cpm_duracao_prevista;
     @Column(name = "cpm_cep")
@@ -33,7 +34,7 @@ public class Compromisso {
     public String getCpm_nome() {
         return cpm_nome;
     }
-  public Compromisso(String cpm_nome, Date cpm_data_hora, Float cpm_duracao_prevista, Long cpm_cep, Integer cpm_numero) {
+  public Compromisso(String cpm_nome, LocalDateTime cpm_data_hora, Float cpm_duracao_prevista, Long cpm_cep, Integer cpm_numero) {
     this();
     this.cpm_nome = cpm_nome;
     this.cpm_data_hora = cpm_data_hora;
@@ -44,10 +45,10 @@ public class Compromisso {
   public void setCpm_nome(String cpm_nome) {
         this.cpm_nome = cpm_nome;
     }
-    public Date getCpm_data_hora() {
+    public LocalDateTime getCpm_data_hora() {
         return cpm_data_hora;
     }
-    public void setCpm_data_hora(Date cpm_data_hora) {
+    public void setCpm_data_hora(LocalDateTime cpm_data_hora) {
         this.cpm_data_hora = cpm_data_hora;
     }
     public Float getCpm_duracao_prevista() {

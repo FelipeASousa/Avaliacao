@@ -1,5 +1,7 @@
 package com.avaliacao.avaliacao.controller;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ public class CompromissoController {
     }
 
     @PostMapping
-    public Compromisso cadastarCompromisso(@RequestBody Compromisso Compromisso){
+    public Compromisso cadastrarCompromisso(@RequestBody Compromisso Compromisso){
         return repositorio_Compromisso.save(Compromisso);
     }
 
@@ -40,5 +42,9 @@ public class CompromissoController {
         return service.buscarPorId(id);
     }
 
+    @GetMapping(value = "/{nome}/{datahora}")
+    public List<Compromisso> determinadoNomeDataHora(@PathVariable("nome") String nome, @PathVariable("datahora")  LocalDateTime datahora){
+        return repositorio_Compromisso.buscarPeloNomeDataHora(nome, datahora);
+    }
 
 }
